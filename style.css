@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+#game {
+    display: inline-block;
+}
+
+.board {
+    display: block;
+    min-width: 256px;
+    min-height: 256px;
+    border: 8px solid #505050;
+    background-color: gray;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(61, 59, 59, 0.5);
+}
+
+.cells {
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 4PX;
+    width: 64px;
+    height: 64px;
+    background-color: lightgray;
+    border-radius: 2px;
+}
+
+/* .cells-bottom {
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    width: 64px;
+    height: 64px;
+    background-color: lightgray;
+    border-radius: 2px;
+} */
