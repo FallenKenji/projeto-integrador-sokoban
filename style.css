@@ -15,31 +15,27 @@ main {
 }
 
 .board {
-    display: block;
-    min-width: 256px;
+    min-width:  256px;
     min-height: 256px;
     border: 8px solid #505050;
-    background-color: gray;
     border-radius: 8px;
-    box-shadow: 5px 5px 5px rgba(61, 59, 59, 0.5);
+    padding: 2px 3px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.31);
+    background-color: gray;
 }
 
-.cells {
-    margin-top: 4px;
-    margin-left: 4px;
-    margin-bottom: 4PX;
-    width: 64px;
-    height: 64px;
-    background-color: lightgray;
-    border-radius: 2px;
+.row {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    margin: 2px 0;
+    background-color: rgb(163, 161, 161);
 }
 
-/* .cells-bottom {
-    margin-top: 4px;
-    margin-left: 4px;
-    margin-bottom: 4px;
-    width: 64px;
+.cell {
     height: 64px;
-    background-color: lightgray;
+    width: 64px;
+    margin: 0 1px;
     border-radius: 2px;
-} */
+    background-color: aliceblue;
+}
