@@ -17,9 +17,9 @@ main {
 .board {
     min-width:  256px;
     min-height: 256px;
+    padding: 2px 3px;
     border: 8px solid #484848;
     border-radius: 8px;
-    padding: 2px 3px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.31);
     background-color: dimgray;
 }
@@ -41,10 +41,7 @@ main {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.cell1 {
-    height: 0px;
-    width: 64px;
-    margin: 0 1px;
-    border-radius: 2px;
-    background-color: aliceblue;
+.empty {
+   background-color: unset;
+   box-shadow:none;
 }
