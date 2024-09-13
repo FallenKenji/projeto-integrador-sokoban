@@ -1,11 +1,15 @@
-const board2 = document.getElementById('board2');
-const game = document.getElementById('game');
-const row = document.createElement('div');
+const tabuleiro = document.getElementById('board2');
 
-row.classList.add('row');
-board2.appendChild(row);
-console.log(row)
-console.log(game);
+const linha = document.createElement('div');
+linha.classList.add('row');
+
+for(let i=0; i<4; i++) {}
+const celula = document.createElement('div');
+celula.classList.add('cell');
+linha.appendChild(celula);
+for(let i = 0; i<4; i++) {
+tabuleiro.appendChild(linha);
+}
 
 
-console.log("funcionou");
+tabuleiro.appendChild(linha);
