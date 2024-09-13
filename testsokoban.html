@@ -1,53 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <title>Sokoban</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sokoban</title>
-
-    <!-- Estilos -->
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f0f0f0;
-      }
-      #game-container {
-        width: 600px;
-        height: 600px;
-        background-color: #ddd;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <!-- Container do jogo -->
-    <div id="game-container">
-      <!-- O jogo Sokoban será renderizado aqui -->
-      <canvas id="gameCanvas" width="600" height="600"></canvas>
+<body>
+  <main>
+    <div id="game">
+      <div class="board">
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
+        <div class="row">
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+          <div class="cell"></div>
+        </div>
     </div>
-
-    <!-- Scripts -->
-    <script>
-      // Inicialização básica do jogo
-      const canvas = document.getElementById('gameCanvas');
-      const ctx = canvas.getContext('2d');
-
-      // Função exemplo para desenhar algo no canvas
-      function draw() {
-        ctx.fillStyle = 'blue';
-        ctx.fillRect(50, 50, 100, 100);
-      }
-
-      // Chama a função para desenhar
-      draw();
-    </script>
-  </body>
+  </main>
+</body>
 </html>
