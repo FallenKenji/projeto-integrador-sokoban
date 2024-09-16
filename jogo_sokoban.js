@@ -9,8 +9,13 @@ function tab(linhas, celulas) {
             const celula = document.createElement('div');
             celula.classList.add('cell');
             linha.append(celula);
+
+            if (k==0 || k == 7 || i == 0 || i == 7  ) {
+                celula.classList.add('empty');    
+            }
         }
     }
 }
 
 tab(8, 8);
+
