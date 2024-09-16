@@ -1,48 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- 
+function criarLinha(celulas) {
+    const linha = document.createElement('div');
+    linha.classList.add('row');
+    for (let k = 0; k < celulas; k++) {
+        const celula = document.createElement('div');
+        celula.classList.add('cell');
+        linha.append(celula);
+    }
+    return linha;
+}
+const numeroLinhas = 8;
+const numeroCelulasPorLinha = 8;
+for (let i= 0; i<numeroLinhas; i++){
+    const linha = criarLinha(numeroCelulasPorLinha);
+    tabuleiro.append(linha)
+} -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="stylessokoban.css" />
-  <title>Sokoban</title>
-</head>
-
-<body>
-  <main>
-    <div id="game">
-      <div class="board">
-        <div class="row">
-          <div class="cell remove"></div>
-          <div class="cell"></div>
-          <div class="cell remove"></div>
-          <div class="cell"></div>
-        </div>
-        <div class="row">
-          <div class="cell"></div>
-          <div class="cell remove"></div>
-          <div class="cell remove"></div>
-          <div class="cell"></div>
-        </div>
-        <div class="row">
-          <div class="cell remove"></div>
-          <div class="cell remove"></div>
-          <div class="cell remove"></div>
-          <div class="cell"></div>
-        </div>
-        <div class="row">
-          <div class="cell"></div>
-          <div class="cell remove"></div>
-          <div class="cell"></div>
-          <div class="cell"></div>
-        </div>
-      </div>
-      <div class="board" id="board2">
-        
-      </div>
-    </div>
-  </main>
-  <script src="./sokobanJS.js"></script>
-</body>
-
-</html>
+<!-- const tabuleiro = document.getElementById('board2');
+for(let i = 0; i<8; i++) {
+    const linha = document.createElement('div');
+    linha.classList.add('row');
+    tabuleiro.appendChild(linha);
+    for(let i=0; i<8; i++) {
+        const celula = document.createElement('div');
+        celula.classList.add('cell');
+        linha.appendChild(celula); 
+    }    
+} -->
