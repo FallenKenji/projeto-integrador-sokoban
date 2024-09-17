@@ -10,9 +10,9 @@ function tab(linhas, celulas) {
             celula.classList.add('cell');
             linha.append(celula);
 
-            // if (y == 0 || y == linhas - 1 || x == 0 || x == celulas - 1) {
-            //     celula.classList.add('empty');
-            // } 
+            if (y == 0 || y == linhas - 1 || x == 0 || x == celulas - 1) {
+                celula.classList.add('empty');
+            } 
 
             // if (y > 0 && y < linhas - 1 && x > 0 && x < celulas - 1) {
             //     celula.classList.add('empty');
@@ -26,10 +26,10 @@ function tab(linhas, celulas) {
             //     celula.classList.add('empty');
             // }
 
-            if (y + x == linhas -1) {
-                celula.classList.add('empty');
+            // if (y + x == linhas -1) {
+            //     celula.classList.add('empty');
                 
-            }
+            // }
 
         }
     }
