@@ -13,47 +13,36 @@ function buildGameBoard(linhas, celulas, regra) {
             celula.classList.add('cell');
             linha.append(celula);
 
-            regra(celula, linhas, celulas, y, x);
-        
+            if (regra(linhas, celulas, y, x)) {
+                celula.classList.add('empty');
+            }
         }
     }
 
     game.append(board);
 }
-function regra(celula, linhas, celulas, y, x) {
-    if (y == 0 || y == 7 || x == 0 || x == 7) {
-        celula.classList.add('empty');
-    }   
+function regra(linhas, celulas, y, x) {
+    return y == 0 || y == 7 || x == 0 || x == 7 
 }
 
-function regra1(celula, linhas, celulas, y, x) {
-    if (y > 0 && y < 7 && x > 0 && x < 7) {
-        celula.classList.add('empty');
-    }
+function regra1(linhas, celulas, y, x) {
+    return y > 0 && y < 7 && x > 0 && x < 7   
 }
 
-function regra2(celula, linhas, celulas, y, x) {
-    if (y + x == 7) {
-        celula.classList.add('empty');
-    }
+function regra2(linhas, celulas, y, x) {
+    return y + x == 7
 }
 
-function regra3(celula, linhas, celulas, y, x) {
-    if (y == x) {
-        celula.classList.add('empty');
-    }
+function regra3(linhas, celulas, y, x) {
+    return y == x 
 }
 
-function regra4(celula, linhas, celulas, y, x) {
-    if (y == x || y + x == 7) {
-        celula.classList.add('empty');
-    }
+function regra4(linhas, celulas, y, x) {
+    return y == x || y + x == 7 
 }
 
-function regra5(celula, linhas, celulas, y, x) {
-    if ((y + x) % 2 == 0) {
-        celula.classList.add('empty')
-    }
+function regra5(linhas, celulas, y, x) {
+    return (y + x) % 2 == 0 
 }
 
 
