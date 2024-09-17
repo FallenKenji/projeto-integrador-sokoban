@@ -9,28 +9,30 @@ main {
     align-items: center;
     height: inherit;
 }
-#game{
- display: flex;
- justify-content: space-evenly;
- width: 100%;
- align-items: center;
+#game {
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
 }
 
 .board {
- min-width:  64px;
- min-height: 64px;
-
- border: 8px solid #505050;
- border-radius: 8px;
- padding: 2px 3px;
- box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
- background-color: gray;
+    min-width:  64px;
+    min-height: 64px;
+    margin: 24px;
+    border: 8px solid #505050;
+    border-radius: 8px;
+    padding: 2px 3px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    background-color: gray;
 }
 
 .row {
- display: flex;
- min-height: 64px;
- margin: 2px 0;
+    display: flex;
+    min-height: 64px;
+    margin: 2px 0;
 }
 
 .cell {
@@ -43,6 +45,10 @@ main {
 }
 
 .empty {
- background-color: unset;
- box-shadow: none;
+    background-color: unset;
+    box-shadow: none;
+ }
+
+ .paint {
+    background-color: blueviolet;
  }
