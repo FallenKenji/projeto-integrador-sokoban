@@ -26,7 +26,9 @@ main {
     padding: 2px 3px;
     border: 8px solid #505050;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    background-color: gray;
+    background: hsla(47, 100%, 87%, 1);
+    background: linear-gradient(360deg, hsla(47, 100%, 87%, 1) 0%, hsla(334, 81%, 60%, 1) 50%, hsla(237, 64%, 56%, 1) 100%);
+    
 }
 
 .row {
@@ -51,5 +53,5 @@ main {
 
  .paint {
     background: rgb(2,0,36);
-    background: linear-gradient(360deg, rgb(132, 0, 255) 25%, rgb(255, 152, 229) 100%);
+    /* background: linear-gradient(360deg, rgb(132, 0, 255) 25%, rgb(145, 0, 0) 100%); */
  }
