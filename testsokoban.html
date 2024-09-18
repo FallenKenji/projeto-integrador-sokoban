@@ -1,0 +1,164 @@
+if (y > 0 && y < linhas - 1 && x > 0 && x < celulas - 1) {
+    celula.classList.add('empty');
+}
+
+if (y == 0 || y == linhas - 1 || x == 0 || x == celulas - 1) {
+    celula.classList.add('empty');
+} 
+
+if (y == x || y + x == linhas - 1) {
+    celula.classList.add('empty');
+}
+
+if (y + x == linhas -1) {
+    celula.classList.add('empty'); 
+}
+
+// const tabuleiro = document.getElementById('board2');
+
+// function tab(linhas, celulas) {
+//     for(let y = 0; y < linhas; y++){
+//         const linha = document.createElement('div');
+//         linha.classList.add('row');
+//         tabuleiro.append(linha);
+//         for(let x = 0; x < celulas; x++) {
+//             const celula = document.createElement('div');
+//             celula.classList.add('cell');
+//             linha.append(celula);
+
+//             if (y == 0 || y == 7 || x == 0 || x == 7) {
+//                 celula.classList.add('empty');
+//             } 
+
+//             if(y > 0 && y < 7 && x > 0 && x < 7 ){
+//                 celula.classList.add('empty');
+//               }
+
+//             if (y + x == 7) {
+//                 celula.classList.add('empty'); 
+//             }
+
+//             if (y == x) {
+//                 celula.classList.add('empty');
+//             }
+            
+//             if (y == x || y + x == 7) {
+//                 celula.classList.add('paint');
+//             }
+
+//         }
+//     }
+// }
+
+// tab(8, 8);
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+#game {
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+}
+
+.board {
+    min-width:  64px;
+    min-height: 64px;
+    margin: 24px;
+    border: 8px solid #505050;
+    border-radius: 8px;
+    padding: 2px 3px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    background-color: gray;
+}
+
+.row {
+    display: flex;
+    min-height: 64px;
+    margin: 2px 0;
+}
+
+.cell {
+    height: 64px;
+    width: 64px;
+    margin: 0 1px;
+    border-radius: 2px;
+    background-color: aliceblue;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.empty {
+    background-color: unset;
+    box-shadow: none;
+ }
+
+ .paint {
+    background-color: blueviolet;
+ }
+
+ body { 
+    margin: 0;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+#game {
+    display: flex;
+    height: 100vh;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+}
+
+.board {
+    min-width: 64px;
+    min-height: 64px;
+    margin: 3vh;
+    border: 8px solid #505050;
+    border-radius: 8px;
+    padding: 2px 3px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    background-color: gray;
+}
+
+.row {
+    display: flex;
+    min-height: 8vh;
+    margin: 1vh 0;
+}
+
+.cell {
+    height: 8vh;
+    width: 8vh;
+    margin: 0 1px;
+    border-radius: 2px;
+    background-color: aliceblue;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.empty {
+    background-color: unset;
+    box-shadow: none;
+}
+
+.paint {
+    background-color: blueviolet;
+}
