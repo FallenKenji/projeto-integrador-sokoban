@@ -14,7 +14,7 @@ function buildGameBoard(linhas, celulas, regra) {
             linha.append(celula);
 
             if (regra(linhas, celulas, y, x)) {
-                celula.classList.add('empty');
+                celula.classList.add('paint');
             }
         }
     }

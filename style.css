@@ -19,9 +19,9 @@ main {
 }
 
 .board {
-    min-width:  64px;
+    min-width: 64px;
     min-height: 64px;
-    margin: 24px;
+    margin: 3vh;
     border: 8px solid #505050;
     border-radius: 8px;
     padding: 2px 3px;
@@ -50,5 +50,6 @@ main {
  }
 
  .paint {
-    background-color: blueviolet;
+    background: rgb(2,0,36);
+    background: linear-gradient(360deg, rgb(132, 0, 255) 25%, rgb(255, 152, 229) 100%);
  }
