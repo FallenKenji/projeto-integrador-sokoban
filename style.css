@@ -7,11 +7,12 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: inherit;
+    height: 100vh;
 }
+
 #game {
     display: flex;
-    height: 100vh;
+    height: 90vh;
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
@@ -19,9 +20,9 @@ main {
 }
 
 .board {
-    min-width:  64px;
+    min-width: 64px;
     min-height: 64px;
-    margin: 24px;
+    margin: 3vh;
     border: 8px solid #505050;
     border-radius: 8px;
     padding: 2px 3px;
@@ -31,13 +32,13 @@ main {
 
 .row {
     display: flex;
-    min-height: 64px;
-    margin: 2px 0;
+    min-height: 8vh;
+    margin: 1vh 0;
 }
 
 .cell {
-    height: 64px;
-    width: 64px;
+    height: 8vh;
+    width: 8vh;
     margin: 0 1px;
     border-radius: 2px;
     background-color: aliceblue;
@@ -47,8 +48,8 @@ main {
 .empty {
     background-color: unset;
     box-shadow: none;
- }
+}
 
- .paint {
+.paint {
     background-color: blueviolet;
- }
+}
