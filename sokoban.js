@@ -18,8 +18,8 @@ console.log(celulas);
 
 function nextPosition(keycode) {
     if (keycode == 'ArrowUp' && player.x > 0) player.x--;
-    if (keycode == 'ArrowDown' && player.x < 4) player.x++;
-    if (keycode == 'ArrowRight' && player.y < 4) player.y++;
+    if (keycode == 'ArrowDown' && player.x < 3) player.x++;
+    if (keycode == 'ArrowRight' && player.y <3) player.y++;
     if (keycode == 'ArrowLeft' && player.y > 0) player.y--;
         
     console.log(keycode, player);
