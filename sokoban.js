@@ -4,7 +4,10 @@ const celulas = document.querySelectorAll('.cell');
 
 window.addEventListener("keydown", function(event) {
     const next = player.nextPosition(event.code);
-    if(verifyPosition(next)) player.movePlayer(next);
+    if(verifyPosition(next)) {
+        let K = next.x * 4 + next.y;
+        player.moveTo(next, playerElement, celulas[K]);
+    }    
 })
 
 function Player(posX, posY) {
@@ -20,11 +23,10 @@ function Player(posX, posY) {
         return {x, y};
     }
     
-    this.movePlayer = function(position) {
+    this.moveTo = function(position, element, parent) {
         this.x = position.x;
         this.y = position.y;
-        const K = this.x * 4 + this.y;
-        celulas[K].append(playerElement);    
+        parent.append(element);    
     }
 }
 
