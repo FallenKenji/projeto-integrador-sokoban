@@ -52,13 +52,13 @@ main {
 .empty {
     background-color: unset;
     box-shadow: none;
- }
+}
 
  .paint {
     background: rgb(2,0,36);
     background: hsla(164, 38%, 18%, 1);
     background: linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);
- }
+}
 
  .player {
     box-sizing: border-box;
@@ -67,4 +67,4 @@ main {
     border-radius: 50%;
     border: solid 8px rgba(0, 24, 15, 0.527);
     background: linear-gradient(360deg, hsla(176, 61%, 87%, 1) 0%, hsla(150, 54%, 86%, 1) 50%, hsla(301, 68%, 84%, 1) 100%);
- }
+}
