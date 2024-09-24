@@ -2,6 +2,11 @@ const player = new Player(0, 0)
 const playerElement = document.querySelector('.player');
 const celulas = document.querySelectorAll('.cell');
 
+const dist_salto = 66;
+const margin_fix =  4;
+playerElement.style.top = calculaPosicao(0);
+playerElement.style.left = calculaPosicao(0);
+
 window.addEventListener("keydown", function(event) {
     const next = player.nextPosition(event.code);
     if(verifyPosition(next)) {
@@ -23,14 +28,19 @@ function Player(posX, posY) {
         return {x, y};
     }
     
-    this.moveTo = function(position, element, parent) {
+    this.moveTo = function (position, _parent) {
         this.x = position.x;
         this.y = position.y;
-        parent.append(element);    
+        playerElement.style.top = calculaPosicao(this.x);
+        playerElement.style.left = calculaPosicao(this.y);
     }
 }
 
 function verifyPosition(position) {
-    let {x, y} = position;
+    let { x, y } = position;
     return x >= 0 && x < 4 && y >= 0 && y < 4;
+}
+
+function calculaPosicao(qtd) {
+    return qtd * dist_salto + margin_fix + "px";
 }
