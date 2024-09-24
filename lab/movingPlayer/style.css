@@ -69,8 +69,8 @@ main {
     height: 64px;
     width: 64px;
     border-radius: 50%;
-    border: solid 8px rgba(0, 24, 15, 0.527);
-    background: linear-gradient(360deg, hsla(176, 61%, 87%, 1) 0%, hsla(150, 54%, 86%, 1) 50%, hsla(301, 68%, 84%, 1) 100%);
+    border: solid 8px rgba(0, 24, 15, 0.856);
+    background: linear-gradient(360deg, hsla(146, 39%, 53%, 1) 0%, hsla(266, 62%, 68%, 1) 50%, hsla(265, 68%, 45%, 1) 100%);
     transition:
     left 150ms ease-in-out 50ms,
     top 150ms ease-in-out 50ms;
