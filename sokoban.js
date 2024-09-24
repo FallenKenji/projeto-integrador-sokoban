@@ -1,6 +1,32 @@
+buildGameBoard(10, 10, regra0);
+function buildGameBoard(linhas, celulas, regras) {
+    const game = document.getElementById('game');
+    const board = document.createElement('div');
+    const jogador = document.createElement('div');
+    jogador.classList.add('player');
+    board.append(jogador);
+    board.classList.add('board');
+    for (let k = 0; k < linhas; k++) {
+        const linha = document.createElement('div');
+        linha.classList.add('row');
+        board.append(linha);
+        for (let i = 0; i < celulas; i++) {
+            const celula = document.createElement('div');
+            celula.classList.add('cell');
+            linha.append(celula);
+            if (regras(linhas, celulas, k, i)) {
+                celula.classList.add('remove');
+            }
+        }
+    }
+    game.append(board);
+}
+function regra0(k, i) {
+    return k == 0 || k == 7 || i == 0 || i == 7;
+}
+
 const player = new Player(0, 0)
 const playerElement = document.querySelector('.player');
-const celulas = document.querySelectorAll('.cell');
 
 const dist_salto = 66;
 const margin_fix =  4;
@@ -10,8 +36,7 @@ playerElement.style.left = calculaPosicao(0);
 window.addEventListener("keydown", function(event) {
     const next = player.nextPosition(event.code);
     if(verifyPosition(next)) {
-        let K = next.x * 4 + next.y;
-        player.moveTo(next, playerElement, celulas[K]);
+        player.moveTo(next, playerElement);
     }    
 })
 
@@ -28,7 +53,7 @@ function Player(posX, posY) {
         return {x, y};
     }
     
-    this.moveTo = function (position, _parent) {
+    this.moveTo = function (position, playerElement) {
         this.x = position.x;
         this.y = position.y;
         playerElement.style.top = calculaPosicao(this.x);
