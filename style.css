@@ -19,6 +19,7 @@ main {
 }
 
 .board {
+    position: relative;
     min-width: 64px;
     min-height: 64px;
     margin: 24px;
@@ -61,10 +62,16 @@ main {
 }
 
  .player {
+    position: absolute;
+    top: 0;
+    left: 0;
     box-sizing: border-box;
     height: 64px;
     width: 64px;
     border-radius: 50%;
     border: solid 8px rgba(0, 24, 15, 0.527);
     background: linear-gradient(360deg, hsla(176, 61%, 87%, 1) 0%, hsla(150, 54%, 86%, 1) 50%, hsla(301, 68%, 84%, 1) 100%);
+    transition:
+    left 150ms ease-in-out 50ms,
+    top 150ms ease-in-out 50ms;
 }
