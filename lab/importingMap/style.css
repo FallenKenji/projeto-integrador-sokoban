@@ -55,13 +55,17 @@ main {
     box-shadow: none;
 }
 
- .paint {
+.paint {
     background: rgb(2,0,36);
     background: hsla(164, 38%, 18%, 1);
     background: linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);
 }
 
- .player {
+.box { background-color: chocolate; }
+.goal { background-color: rgba(158, 48, 48, 0.719); }
+.wall { background-color: rgba(0, 0, 0, 0.4); }
+
+.player {
     position: absolute;
     top: 0;
     left: 0;
