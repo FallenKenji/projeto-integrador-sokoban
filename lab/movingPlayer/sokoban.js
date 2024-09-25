@@ -2,8 +2,8 @@ const player = new Player(0, 0)
 const playerElement = document.querySelector('.player');
 const celulas = document.querySelectorAll('.cell');
 
-const dist_salto = 66;
-const margin_fix =  4;
+const DIST_SALTO = 66;
+const MARGIN_FIX =  4;
 playerElement.style.top = calculaPosicao(0);
 playerElement.style.left = calculaPosicao(0);
 
@@ -42,5 +42,5 @@ function verifyPosition(position) {
 }
 
 function calculaPosicao(qtd) {
-    return qtd * dist_salto + margin_fix + "px";
+    return qtd * DIST_SALTO +   MARGIN_FIX + "px";
 }
