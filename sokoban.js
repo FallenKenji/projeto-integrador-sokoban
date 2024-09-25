@@ -1,19 +1,27 @@
+const boardMap = [
+    ["#", "#", "#", "#", "#", "#", "#", "#"],
+    ["#", ".", ".", ".", ".", ".", ".", "#"],
+    ["#", ".", ".", ".", "#", ".", ".", "#"],
+    ["#", ".", "#", "G", ".", ".", ".", "#"],
+    ["#", ".", ".", "G", "B", "#", ".", "#"],
+    ["#", ".", ".", "#", ".", "B", ".", "#"],
+    ["#", ".", ".", "P", ".", ".", ".", "#"],
+    ["#", "#", "#", "#", "#", "#", "#", "#"]
+]
+
+const NUM_ROWS = boardMap.length;
+const NUM_COLS = boardMap[0].length;
 const DIST_SALTO = 66;
 const MARGIN_FIX = 4;
-const NUM_ROWS = 8;
-const NUM_COLS = 8;
 
-function regra0() {
-    return false;
-}
 
-buildGameBoard(NUM_ROWS, NUM_COLS, regra0);
+buildGameBoard(NUM_ROWS, NUM_COLS);
 
-const player = new Player(0, 0);
+const player = new Player(1, 1);
 const playerElement = document.querySelector('.player');
 
-playerElement.style.top = calculaPosicao(0);
-playerElement.style.left = calculaPosicao(0);
+playerElement.style.top = calculaPosicao(player.x);
+playerElement.style.left = calculaPosicao(player.y);
 
 window.addEventListener("keydown", function (event) {
     const next = player.nextPosition(event.code);
@@ -49,7 +57,7 @@ function Player(posX, posY) {
 
 function verifyPosition(position) {
     let { x, y } = position;
-    return x >= 0 && x < NUM_ROWS && y >= 0 && y < NUM_COLS;
+    return boardMap[x][y] !=="#";
 }
 
 function calculaPosicao(qtd) {
@@ -75,13 +83,12 @@ function buildGameBoard(linhas, celulas, regra) {
         
         for (let x = 0; x < celulas; x++) {
             const celula = createGameElement('div','cell', linha);
+
+            const char = boardMap[y][x];
             
-            if (regra(linhas, celulas, y, x)) {
-                celula.classList.add('remove');
+            if (char === '#')celula.classList.add('wall');
+            if (char === 'B')celula.classList.add('box');
+            if (char === 'G')celula.classList.add('goal');
             }
         }
     }
-
-    // game.append(board);
-    // board.append(player);
-}
