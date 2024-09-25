@@ -63,7 +63,7 @@ main {
 
 .box { background-color: chocolate; }
 .goal { background-color: rgba(158, 48, 48, 0.719); }
-.wall { background-color: rgba(0, 0, 0, 0.4); }
+.wall { background-image: url('./Wall.png.png')}
 
  .player {
     position: absolute;
