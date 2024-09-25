@@ -61,6 +61,10 @@ main {
     background: linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);
 }
 
+.box { background-color: chocolate; }
+.goal { background-color: rgba(158, 48, 48, 0.719); }
+.wall { background-color: rgba(0, 0, 0, 0.4); }
+
  .player {
     position: absolute;
     top: 0;

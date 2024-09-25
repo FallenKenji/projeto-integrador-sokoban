@@ -20,7 +20,7 @@ function createGameElement(elementName, className, parentNode) {
 
     return element;
 }
-function buildGameBoard(linhas, celulas, regras) {
+function buildGameBoard(linhas, celulas) {
     const game = document.getElementById('game');
 
     const board = createGameElement('div', 'board', game);
@@ -31,7 +31,7 @@ function buildGameBoard(linhas, celulas, regras) {
         for (let i = 0; i < celulas; i++) {
             const celula = createGameElement('div', 'cell', linha);
             const char = boardMap[k][i];
-            
+
             if (char === '#')celula.classList.add('wall');
             if (char === 'B')celula.classList.add('box');
             if (char === 'G')celula.classList.add('goal');
