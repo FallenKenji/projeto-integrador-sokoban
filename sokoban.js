@@ -15,9 +15,8 @@ const DIST_SALTO = 66;
 const MARGIN_FIX = 4;
 
 
-buildGameBoard(NUM_ROWS, NUM_COLS);
-
-const player = new Player(1, 1);
+const pieces = buildGameBoard(NUM_ROWS, NUM_COLS);
+const player = new Player(pieces.player.x, pieces.player.y);
 const playerElement = document.querySelector('.player');
 
 playerElement.style.top = calculaPosicao(player.x);
@@ -57,7 +56,7 @@ function Player(posX, posY) {
 
 function verifyPosition(position) {
     let { x, y } = position;
-    return boardMap[x][y] !=="#";
+    return boardMap[x][y] !== "#";
 }
 
 function calculaPosicao(qtd) {
@@ -72,23 +71,27 @@ function createGameElement(elementName, className, parentNode) {
     return element;
 }
 
-function buildGameBoard(linhas, celulas, regra) {
+function buildGameBoard(linhas, celulas) {
+    const positionOfPieces = {};
+
     const game = document.getElementById('game');
     const board = createGameElement('div', 'board', game);
-    
-    const player = createGameElement('div','player', board);
 
-    for (let y = 0; y < linhas; y++) {
-        const linha = createGameElement('div','row', board);
-        
-        for (let x = 0; x < celulas; x++) {
-            const celula = createGameElement('div','cell', linha);
+    for (let i = 0; i < linhas; i++) {
+        const linha = createGameElement('div', ['row'], board);
 
-            const char = boardMap[y][x];
-            
-            if (char === '#')celula.classList.add('wall');
-            if (char === 'B')celula.classList.add('box');
-            if (char === 'G')celula.classList.add('goal');
-            }
+        for (let j = 0; j < celulas; j++) {
+            const celula = createGameElement('div', ['cell'], linha);
+
+            const char = boardMap[i][j];
+
+            if (char === '#') celula.classList.add(['wall']);
+            if (char === 'B') celula.classList.add(['box']);
+            if (char === 'G') celula.classList.add(['goal']);
+            if (char === 'P') positionOfPieces.player = { x: i, y: j }
+
         }
     }
+    createGameElement('div', 'player', board);
+    return positionOfPieces;
+}
