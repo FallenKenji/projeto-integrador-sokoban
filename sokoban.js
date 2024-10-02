@@ -1,7 +1,7 @@
 import Piece from "./piece.js";
 import { buildGameBoard, boardMap } from "./board.js";
 
-const pieces = buildGameBoard();
+const {pieces, numberOfGoals} = buildGameBoard();
 const board = document.querySelector('.board');
 
 const player = createBoardPiece(pieces.player, 'player')
@@ -27,6 +27,10 @@ function findBoxAtPosition(position) {
     return boxes.find((box) => box.x === position.x && box.y === position.y);
 }
 
+function levantaPlaquinha() {
+    alert("Você venceu!");
+}
+
 /** Tarefa #2: modificar a função abaixo de forma a tratar tanto a movimentação
  * do jogador quanto das caixas.
 */
@@ -47,8 +51,8 @@ function handlePieceMovement(keycode) {
 
             const caixasCertas = contagemDeCaixasCorretas();
 
-            if (caixasCertas === 3) {
-                alert("Você venceu!");
+            if (caixasCertas === numberOfGoals) {
+                setTimeout(levantaPlaquinha, 200);
             }
 
             console.log(caixasCertas);
