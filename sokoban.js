@@ -44,6 +44,14 @@ function handlePieceMovement(keycode) {
         if (boxCanMove) {
             foundBox.moveTo(nextBoxPosition);
             player.moveTo(nextPlayerPosition);
+
+            const caixasCertas = contagemDeCaixasCorretas();
+
+            if (caixasCertas === 3) {
+                alert("Você venceu!");
+            }
+
+            console.log(caixasCertas);
         }
     }
     // E caso não encontre outra peça...
@@ -76,4 +84,15 @@ function handleKeydownEvent(keycode) {
 function verifyPosition(position) {
     let { x: j, y: i } = position;
     return boardMap[i][j] !== "#";
+}
+
+function contagemDeCaixasCorretas() {
+    let count = 0;
+    for (let position of boxes) {
+        let { x: j, y: i } = position;
+
+        if (boardMap[i][j] === "G") count++;
+    }
+
+    return count;
 }

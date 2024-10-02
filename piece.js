@@ -1,4 +1,4 @@
-import {createGameElement} from "./board.js";
+import { createGameElement } from "./board.js";
 
 const DIST_SALTO = 66;
 const MARGIN_FIX = 4;
@@ -17,7 +17,7 @@ function Piece(posX, posY) {
         if (keycode === 'KeyS') y++;
         if (keycode === 'KeyA') x--;
         if (keycode === 'KeyD') x++;
-        console.log(keycode);
+        // console.log(keycode);
         return { x, y };
     }
 
@@ -32,11 +32,11 @@ function Piece(posX, posY) {
         this.updateElementPosition();
     }
 
-    this.updateElementPosition = function (){
+    this.updateElementPosition = function () {
         this.element.style.top = calculaPosicao(this.y);
         this.element.style.left = calculaPosicao(this.x);
     }
-    
+
     function calculaPosicao(qtd) {
         return qtd * DIST_SALTO + MARGIN_FIX + "px";
     }

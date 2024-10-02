@@ -9,6 +9,7 @@ main {
     align-items: center;
     height: inherit;
 }
+
 #game {
     display: flex;
     height: 100vh;
@@ -27,7 +28,7 @@ main {
     padding: 2px 3px;
     border: 8px solid #505050;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(360deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 100%);
+    background: linear-gradient(360deg, rgb(0, 0, 0) 0%, rgb(102, 0, 143) 50%, rgb(0, 0, 0) 100%);
 }
 
 .row {
@@ -38,15 +39,16 @@ main {
 }
 
 .cell {
-    
+
     height: 64px;
     width: 64px;
     margin: 0 1px;
     border-radius: 2px;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
+    background-image: url('/End_Stone.png');
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
 }
 
 .empty {
@@ -54,32 +56,36 @@ main {
     box-shadow: none;
 }
 
- .paint {
-    background: rgb(2,0,36);
+.paint {
+    background: rgb(2, 0, 36);
     background: hsla(164, 38%, 18%, 1);
     background: linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);
 }
 
-.box { 
+.box {
     background-image: url('/Ender_Chest.png');
     position: absolute;
     box-sizing: border-box;
-    height: 64px;
-    width: 64px;
+    height: 60px;
+    width: 60px;
+    margin: 2px;
     transition:
-    left 150ms ease-in-out 50ms,
-    top 150ms ease-in-out 50ms;
-}
-.goal { 
-    background-color: rgba(158, 48, 48, 0.719); 
+        left 150ms ease-in-out 50ms,
+        top 150ms ease-in-out 50ms;
 }
 
-.wall { 
-    background-image: url('./Cobblestone.png')
+.goal {
+    background-image: url('./Red_Nether_Bricks.png');
 }
 
- .player {
+.wall {
+    background-image: url('./Obsidian.png');
+
+}
+
+.player {
     position: absolute;
+
     top: 0;
     left: 0;
     box-sizing: border-box;
@@ -90,6 +96,6 @@ main {
     background: hsla(146, 39%, 53%, 1);
     background: linear-gradient(360deg, hsla(146, 39%, 53%, 1) 0%, hsla(266, 62%, 68%, 1) 50%, hsla(265, 68%, 45%, 1) 100%);
     transition:
-    left 150ms ease-in-out 50ms,
-    top 150ms ease-in-out 50ms;
+        left 150ms ease-in-out 50ms,
+        top 150ms ease-in-out 50ms;
 }
