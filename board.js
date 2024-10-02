@@ -2,10 +2,10 @@ export const boardMap = [
     ["#", "#", "#", "#", "#", "#", "#", "#"],
     ["#", ".", ".", ".", ".", ".", ".", "#"],
     ["#", ".", ".", ".", "#", ".", ".", "#"],
-    ["#", ".", "#", "G", ".", ".", ".", "#"],
-    ["#", ".", ".", "G", "B", "#", ".", "#"],
-    ["#", ".", ".", "#", ".", "B", ".", "#"],
-    ["#", ".", ".", "P", ".", ".", ".", "#"],
+    ["#", ".", "#", ".", "G", ".", ".", "#"],
+    ["#", ".", ".", ".", "B", "#", ".", "#"],
+    ["#", ".", "G", "B", "P", "B", "G", "#"],
+    ["#", ".", ".", ".", ".", ".", ".", "#"],
     ["#", "#", "#", "#", "#", "#", "#", "#"]
 ];
 
@@ -25,6 +25,8 @@ export function buildGameBoard() {
         boxes: []
     };
 
+    let numberOfGoals = 0;
+
     const game = document.getElementById('game');
     const board = createGameElement('div', 'board', game);
 
@@ -35,15 +37,17 @@ export function buildGameBoard() {
             const celula = createGameElement('div', 'cell', linha);
 
             const char = boardMap[i][j];
-            const position = {x: j, y: i};
+            const position = { x: j, y: i };
 
             if (char === '#') celula.classList.add('wall');
-            // if (char === 'B') celula.classList.add(['box']);
-            if (char === 'G') celula.classList.add('goal');
             if (char === 'P') pieces.player = position;
             if (char === 'B') pieces.boxes.push(position);
+            if (char === 'G') {
+                numberOfGoals++;
+                celula.classList.add('goal')
+            };
         }
     }
 
-    return pieces;
+    return {pieces, numberOfGoals};
 }
