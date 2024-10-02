@@ -60,9 +60,23 @@ main {
     background: linear-gradient(90deg, hsla(164, 38%, 18%, 1) 0%, hsla(158, 77%, 77%, 1) 100%);
 }
 
-.box { background-image: url('/Ender_Chest.png') }
-.goal { background-color: rgba(158, 48, 48, 0.719); }
-.wall { background-image: url('./Pedregulho.png')}
+.box { 
+    background-image: url('/Ender_Chest.png');
+    position: absolute;
+    box-sizing: border-box;
+    height: 64px;
+    width: 64px;
+    transition:
+    left 150ms ease-in-out 50ms,
+    top 150ms ease-in-out 50ms;
+}
+.goal { 
+    background-color: rgba(158, 48, 48, 0.719); 
+}
+
+.wall { 
+    background-image: url('./Cobblestone.png')
+}
 
  .player {
     position: absolute;
