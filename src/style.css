@@ -46,7 +46,7 @@ main {
     border-radius: 2px;
     justify-content: center;
     align-items: center;
-    background-image: url('/End_Stone.png');
+    background-image: url('./assets/End_Stone.png');
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 
 }
@@ -63,7 +63,7 @@ main {
 }
 
 .box {
-    background-image: url('/Ender_Chest.png');
+    background-image: url('./assets/Ender_Chest.png');
     position: absolute;
     box-sizing: border-box;
     height: 60px;
@@ -75,11 +75,11 @@ main {
 }
 
 .goal {
-    background-image: url('./Red_Nether_Bricks.png');
+    background-image: url('./assets/Red_Nether_Bricks.png');
 }
 
 .wall {
-    background-image: url('./Obsidian.png');
+    background-image: url('./assets/Obsidian.png');
 
 }
 
