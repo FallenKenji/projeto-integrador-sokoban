@@ -7,7 +7,7 @@ function string2BoardMap(level) {
     return lines;
 }
 
-export const boardMap = string2BoardMap(mapa1);
+const boardMap = string2BoardMap(mapa1);
 
 const NUM_ROWS = boardMap.length;
 
