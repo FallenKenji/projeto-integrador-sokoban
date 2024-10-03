@@ -41,7 +41,6 @@ main {
 }
 
 .cell {
-
     height: 64px;
     width: 64px;
     margin: 0 1px;
@@ -56,6 +55,7 @@ main {
 .empty {
     background-color: unset;
     box-shadow: none;
+    background-image: unset;
 }
 
 .paint {
@@ -65,6 +65,7 @@ main {
 }
 
 .box {
+    background-size: cover;
     background-image: url('./assets/Ender_Chest.png');
     position: absolute;
     box-sizing: border-box;
@@ -87,16 +88,13 @@ main {
 
 .player {
     position: absolute;
-
     top: 0;
     left: 0;
     box-sizing: border-box;
     height: 64px;
     width: 64px;
-    border-radius: 50%;
-    border: solid 7px rgba(0, 24, 15, 0.856);
-    background: hsla(146, 39%, 53%, 1);
-    background: linear-gradient(360deg, hsla(146, 39%, 53%, 1) 0%, hsla(266, 62%, 68%, 1) 50%, hsla(265, 68%, 45%, 1) 100%);
+    background-image: url('./assets/Sans.png');
+    background-size: cover;
     transition:
         left 150ms ease-in-out 50ms,
         top 150ms ease-in-out 50ms;

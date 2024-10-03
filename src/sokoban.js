@@ -12,16 +12,12 @@ for (let b = 0; b < pieces.boxes.length; b++) {
 }
 
 window.addEventListener("keydown", function (event) {
-    // event.preventDefault();
 
     handlePieceMovement(event.code);
 });
 
 console.log(pieces.boxes);
 
-/** Tarefa #1: implementar função para localizar uma caixa à partir de um
- * uma dada coordenada.
-*/
 function findBoxAtPosition(position) {
 
     return boxes.find((box) => box.x === position.x && box.y === position.y);
@@ -31,16 +27,12 @@ function levantaPlaquinha() {
     alert("Você venceu!");
 }
 
-/** Tarefa #2: modificar a função abaixo de forma a tratar tanto a movimentação
- * do jogador quanto das caixas.
-*/
 function handlePieceMovement(keycode) {
-    // Variável destinada ao pré-cálculo da posição do jogador
+
     const nextPlayerPosition = player.nextPosition(keycode);
-    // (Modificar) Variável para detectar a "presença" de outra peça
+
     const foundBox = findBoxAtPosition(nextPlayerPosition);
 
-    // Implementar lógica caso encontre uma outra peça no caminho.
     if (foundBox) {
         const nextBoxPosition = foundBox.nextPosition(keycode);
         const boxCanMove = verifyPosition(nextBoxPosition) && !findBoxAtPosition(nextBoxPosition);
@@ -58,10 +50,8 @@ function handlePieceMovement(keycode) {
             console.log(caixasCertas);
         }
     }
-    // E caso não encontre outra peça...
+
     else {
-        // Faça as modificações que forem necessárias para manter o
-        // funcionamento do jogo.
         const playerCanMove = verifyPosition(nextPlayerPosition);
 
         if (playerCanMove) {

@@ -1,16 +1,35 @@
-export const boardMap = [
-    ["#", "#", "#", "#", "#", "#", "#", "#"],
-    ["#", ".", ".", ".", ".", ".", ".", "#"],
-    ["#", ".", ".", ".", "#", ".", ".", "#"],
-    ["#", ".", "#", ".", "G", ".", ".", "#"],
-    ["#", ".", ".", ".", "B", "#", ".", "#"],
-    ["#", ".", "G", "B", "P", "B", "G", "#"],
-    ["#", ".", ".", ".", ".", ".", ".", "#"],
-    ["#", "#", "#", "#", "#", "#", "#", "#"]
-];
+const lvl0 = `
+ __#####
+###P..#_
+#..B#.##
+#.#GB..#
+#..G.#.#
+#..#...#
+_#...###
+_#####
+`
+
+function string2BoardMap(Level) {
+    const lines = Level.trim().split('\n');
+    console.log(lines);
+
+    return lines;
+}
+
+export const boardMap = string2BoardMap(lvl0);
+
+// export const boardMap = [
+//     [" ", " ", "#", "#", "#", "#", "#",],
+//     ["#", "#", "#", "P", ".", ".", "#",],
+//     ["#", ".", ".", "B", "#", ".", "#", "#"],
+//     ["#", ".", "#", "G", "B", ".", ".", "#"],
+//     ["#", ".", ".", "G", ".", "#", ".", "#"],
+//     ["#", ".", ".", "#", ".", ".", ".", "#"],
+//     [" ", "#", ".", ".", ".", "#", "#", "#"],
+//     [" ", "#", "#", "#", "#", "#",]
+// ];
 
 const NUM_ROWS = boardMap.length;
-const NUM_COLS = boardMap[0].length;
 
 export function createGameElement(elementName, className, parentNode) {
     const element = document.createElement(elementName)
@@ -32,6 +51,7 @@ export function buildGameBoard() {
 
     for (let i = 0; i < NUM_ROWS; i++) {
         const linha = createGameElement('div', 'row', board);
+        const NUM_COLS = boardMap[i].length;
 
         for (let j = 0; j < NUM_COLS; j++) {
             const celula = createGameElement('div', 'cell', linha);
@@ -40,6 +60,8 @@ export function buildGameBoard() {
             const position = { x: j, y: i };
 
             if (char === '#') celula.classList.add('wall');
+            if (char === ' ') celula.classList.add('empty');
+            if (char === '_') celula.classList.add('empty');
             if (char === 'P') pieces.player = position;
             if (char === 'B') pieces.boxes.push(position);
             if (char === 'G') {
@@ -49,5 +71,5 @@ export function buildGameBoard() {
         }
     }
 
-    return { pieces, numberOfGoals };
+    return { boardMap, pieces, numberOfGoals };
 }
