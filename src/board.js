@@ -7,10 +7,6 @@ function string2BoardMap(level) {
     return lines;
 }
 
-const boardMap = string2BoardMap(mapa1);
-
-const NUM_ROWS = boardMap.length;
-
 export function createGameElement(elementName, className, parentNode) {
     const element = document.createElement(elementName)
     element.classList.add(className);
@@ -19,7 +15,8 @@ export function createGameElement(elementName, className, parentNode) {
     return element;
 }
 
-export function buildGameBoard() {
+export function buildGameBoard(mapa) {
+    const boardMap = string2BoardMap(mapa);
     const pieces = {
         boxes: []
     };
@@ -28,6 +25,7 @@ export function buildGameBoard() {
 
     const game = document.getElementById('game');
     const board = createGameElement('div', 'board', game);
+    const NUM_ROWS = boardMap.length;
 
     for (let i = 0; i < NUM_ROWS; i++) {
         const linha = createGameElement('div', 'row', board);
