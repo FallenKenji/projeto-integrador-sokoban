@@ -49,5 +49,5 @@ export function buildGameBoard() {
         }
     }
 
-    return {pieces, numberOfGoals};
+    return { pieces, numberOfGoals };
 }
