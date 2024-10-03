@@ -1,33 +1,13 @@
-const lvl0 = `
- __#####
-###P..#_
-#..B#.##
-#.#GB..#
-#..G.#.#
-#..#...#
-_#...###
-_#####
-`
+import { mapa1 } from "./mapas.js";
 
-function string2BoardMap(Level) {
-    const lines = Level.trim().split('\n');
+function string2BoardMap(level) {
+    const lines = level.trim().split('\n');
     console.log(lines);
 
     return lines;
 }
 
-export const boardMap = string2BoardMap(lvl0);
-
-// export const boardMap = [
-//     [" ", " ", "#", "#", "#", "#", "#",],
-//     ["#", "#", "#", "P", ".", ".", "#",],
-//     ["#", ".", ".", "B", "#", ".", "#", "#"],
-//     ["#", ".", "#", "G", "B", ".", ".", "#"],
-//     ["#", ".", ".", "G", ".", "#", ".", "#"],
-//     ["#", ".", ".", "#", ".", ".", ".", "#"],
-//     [" ", "#", ".", ".", ".", "#", "#", "#"],
-//     [" ", "#", "#", "#", "#", "#",]
-// ];
+export const boardMap = string2BoardMap(mapa1);
 
 const NUM_ROWS = boardMap.length;
 
