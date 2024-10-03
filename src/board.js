@@ -1,5 +1,3 @@
-import { mapa1 } from "./mapas.js";
-
 function string2BoardMap(level) {
     const lines = level.trim().split('\n');
     console.log(lines);
