@@ -14,7 +14,6 @@ main {
 
 #game {
     display: flex;
-    height: 100vh;
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
@@ -30,7 +29,7 @@ main {
     padding: 2px 3px;
     border: 8px solid #505050;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(360deg, rgb(0, 0, 0) 0%, rgb(102, 0, 143) 50%, rgb(0, 0, 0) 100%);
+    background-image: url('./assets/The_End_Portal.png');
 }
 
 .row {
@@ -98,4 +97,14 @@ main {
     transition:
         left 150ms ease-in-out 50ms,
         top 150ms ease-in-out 50ms;
+}
+
+.counters {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
 }

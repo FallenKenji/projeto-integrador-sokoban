@@ -8,11 +8,20 @@ const board = document.querySelector('.board');
 const player = createBoardPiece(pieces.player, 'player')
 const boxes = [];
 
+let playerMoves = 0;
+let boxMoves = 0;
+
+const playerMovesElement = document.getElementById('player-moves');
+const boxMovesElement = document.getElementById('box-moves');
+
+const playerWin = document.querySelector('.player');
+
 for (let b = 0; b < pieces.boxes.length; b++) {
     boxes.push(createBoardPiece(pieces.boxes[b], 'box'));
 }
 
 window.addEventListener("keydown", function (event) {
+    // event.preventDefault();
 
     handlePieceMovement(event.code);
 });
@@ -24,16 +33,15 @@ function findBoxAtPosition(position) {
     return boxes.find((box) => box.x === position.x && box.y === position.y);
 }
 
-function levantaPlaquinha() {
-    alert("Você venceu!");
+function victory() {
+    alert("Congratulations!");
 }
 
 function handlePieceMovement(keycode) {
-
     const nextPlayerPosition = player.nextPosition(keycode);
-
     const foundBox = findBoxAtPosition(nextPlayerPosition);
 
+    let playerMoved = false;
     if (foundBox) {
         const nextBoxPosition = foundBox.nextPosition(keycode);
         const boxCanMove = verifyPosition(nextBoxPosition) && !findBoxAtPosition(nextBoxPosition);
@@ -42,22 +50,32 @@ function handlePieceMovement(keycode) {
             foundBox.moveTo(nextBoxPosition);
             player.moveTo(nextPlayerPosition);
 
+            playerMoved = true;
+
             const caixasCertas = contagemDeCaixasCorretas();
+            console.log(caixasCertas);
 
             if (caixasCertas === numberOfGoals) {
-                setTimeout(levantaPlaquinha, 200);
+                setTimeout(victory, 200);
             }
-
-            console.log(caixasCertas);
+            console.log("Box Moves:", boxMoves += 1);
+            boxMovesElement.textContent = boxMoves;
         }
     }
-
     else {
         const playerCanMove = verifyPosition(nextPlayerPosition);
 
         if (playerCanMove) {
-            player.moveTo(nextPlayerPosition);
+            if (player.x !== nextPlayerPosition.x || player.y !== nextPlayerPosition.y) {
+                player.moveTo(nextPlayerPosition);
+                playerMoved = true;
+            }
         }
+    }
+
+    if (playerMoved) {
+        console.log("Player Moves:", playerMoves += 1);
+        playerMovesElement.textContent = playerMoves;
     }
 }
 
@@ -83,10 +101,11 @@ function verifyPosition(position) {
 
 function contagemDeCaixasCorretas() {
     let count = 0;
+
     for (let position of boxes) {
         let { x: j, y: i } = position;
 
-        if (boardMap[i][j] === "G") count++;
+        if (boardMap[i][j] === 'G') count++;
     }
 
     return count;
