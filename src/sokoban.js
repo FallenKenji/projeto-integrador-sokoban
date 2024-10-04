@@ -32,7 +32,7 @@ function findBoxAtPosition(position) {
 }
 
 function victory() {
-    alert("Congratulations!");
+    alert("Congratulations, You are Number One!");
 }
 
 function handlePieceMovement(keycode) {
