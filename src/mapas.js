@@ -5,7 +5,7 @@ export const mapa1 = `
 #.#GB..#
 #..G.#.#
 #..#...#
-_#...###
+##...###
 _#####
 `
 export const mapa2 = `
