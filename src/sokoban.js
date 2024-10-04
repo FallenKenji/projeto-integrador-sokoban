@@ -21,8 +21,6 @@ for (let b = 0; b < pieces.boxes.length; b++) {
 }
 
 window.addEventListener("keydown", function (event) {
-    // event.preventDefault();
-
     handlePieceMovement(event.code);
 });
 
